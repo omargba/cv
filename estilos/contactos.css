@@ -1,0 +1,147 @@
+       /*Los 4 cambios aplicados fueron 
+            - se añadieron propeidad para hacer mas grande la tabla y se viera mas atractiva
+            - Añadimos un hover en el menu 
+            - Redondemaos solo los bordes de la primera y ultima fila
+            - Al body se le añadio un color como degradado en las orillas 
+        Nota: Se implementaron todos los cambios y requeirmientos que s eespecificaban en el teams
+       */
+       
+       
+       
+       body {
+            background-color: #ccc;
+            
+        }
+
+        #galeria {
+          background-color: #fffa9e;
+          border-radius: 12px;
+          padding: 16px;
+        }
+
+
+        header,nav,section,article,footer {      /* Añade un espacio interno entre el contenido y el*/
+            padding: 12px; margin:8px;           /**/
+        }
+        header {                                /*Cambai el fondo del header a un gris claro*/
+            background: #000000;
+        }
+        nav {                                   /*Cambai el fondo del NAV a un gris*/
+            background: #ddd;
+        }
+        nav ul{                                 /*Quita las viñetas*/
+            list-style: none; padding: 0;       /*Elimina el espacio interior que tienen las */
+        }
+        nav li{                                 /*Aplica a los li de la lista dentro del nav*/
+            display: inline; margin-right: 10px; /*Hace que los elementos se muestren en linea*/
+        }                                        /*Deja un espacio de 10 px a la derecha de cada enlace*/
+
+        footer {                                  /*Cambia el estilo del footer*/
+            background: #1e90ff;                   /*Fondo gris claro muy oscuro*/                                                   
+            color: #fff;                         /*Texto blanco*/                                                   /*centra el texto*/
+            text-align: center;
+        }
+        img {
+            max-width: 1000%;                        /*Evita que la imagen se salga de la pantalla*/
+            height: auto;                           /*Mantiene la proporcion correcta de la imagen*/
+        }
+        .muted{                                      /*Aplica a los elemntos con class muted*/      
+            color : rgb(233, 136, 136);                             /*Texto gris*/
+            font-size: 0.9en;              
+         }           /*Tamaño de fuente*/
+
+         h1{
+            color: #ffffff;                         /*Azul grisaceo elegante*/
+            text-align: center;                       /*Centra el texto*/
+         }
+
+
+         h2 {
+            color: #e91b1b;
+            border-bottom: 2px solid #e91b1b;
+            padding-bottom: 4px;
+        }
+
+        #contacto, #inicio{
+            background: #fff;
+            border: #ddd;
+            border-radius: 8px;
+            padding: 12px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        input, textarea, button{
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+        }
+
+        button{
+            background: #1e90ff;
+            color: white;
+            border: none;
+            cursor: pointer
+    
+        }
+
+        button:hover{
+            background: #fbff00
+        }
+
+        /*.highlight {
+            background-color: #fffa9e;
+            padding: 2px 6px;
+            border-radius: 4px;
+        }*/
+
+        .grid-2{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        /*Añadiendo 4 funconalides nuevas*/
+        
+        /*Al pasar el mouse cambia de color*/
+        a:hover {
+            color: #fffa9e;
+
+        }
+
+        /*Añadimos propiedad para hacer mas grande la tabla y con mejores bordes*/
+        table{
+            width: 70%;
+            margin: 20px;
+            border-collapse: collapse;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        /*Centra el contendio de la tabla*/
+        td{
+            text-align: center;
+        }
+
+        button:hover{
+            color: #fffa9e;
+
+        }
+
+        /* Bordes redondeados de la primera y última fila 
+        thead th:first-child {
+        border-top-left-radius: 10px;
+        }
+        thead th:last-child {
+        border-top-right-radius: 10px;
+        }
+        tbody tr:last-child td:first-child {
+        border-bottom-left-radius: 10px;
+        }
+        tbody tr:last-child td:last-child {
+        border-bottom-right-radius: 10px;
+        }
+*/

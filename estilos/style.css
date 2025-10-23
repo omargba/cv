@@ -1,0 +1,527 @@
+/* Variables de color (ajusta estos a tu gusto) */
+:root {
+    --color-primario: #4a90e2; /* Azul ejemplo */
+    --color-secundario: #f4f4f4; /* Gris claro */
+    --color-texto: #333;
+    --color-fondo: #ffffff;
+    --color-borde: #ddd;
+    --color-sombra: rgba(0, 0, 0, 0.1);
+    --gradient-start: #ADD8E6; /* Azul claro para gradiente */
+    --gradient-end: #FFFFFF; /* Blanco para gradiente */
+    --color-progreso: var(--color-primario);
+    --color-progreso-fondo: #e0e0e0;
+}
+
+/* Estilos Generales y Fondo */
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: var(--color-texto);
+    margin: 0;
+    padding: 0;
+    /* Fondo con imagen */
+    background-image: url('../imagenes/fondos.jpeg'); /*  */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+/* Overlay para legibilidad */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: rgba(255, 255, 255, 0.9); /* Blanco 90% opaco */
+    z-index: -1;
+}
+
+/* Asegurar contenido sobre overlay y añadir algo de estructura */
+header, nav, section, footer, #bienvenida {
+    position: relative;
+    z-index: 1;
+    max-width: 1100px; /* Ancho máximo para contenido */
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1rem 2rem; /* Padding general */
+}
+
+/* Estilo secciones principales */
+section {
+    background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco semitransparente para secciones */
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px var(--color-sombra);
+    padding: 2rem;
+}
+
+/* Encabezado con Gradiente */
+header {
+    background: linear-gradient(to bottom, var(--gradient-start), var(--gradient-end));
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+    text-align: center;
+    color: var(--color-texto);
+    border-bottom: 1px solid var(--color-borde);
+    max-width: none; /* Header ocupa todo el ancho */
+    margin-bottom: 0; /* Sin margen inferior para pegar nav */
+    border-radius: 0; /* Sin bordes redondeados */
+    box-shadow: none; /* Sin sombra */
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.8em;
+}
+
+header p {
+    margin: 0.5em 0 0;
+    font-size: 1.3em;
+    color: #555;
+}
+
+/* Menú de Navegación (Estilo Básico) */
+nav {
+    background-color: #333;
+    padding: 0.5rem 0;
+    text-align: center;
+    max-width: none; /* Nav ocupa todo el ancho */
+    border-radius: 0;
+    box-shadow: none;
+    margin-top: 0; /* Pegado al header */
+}
+
+nav div { /* Contenedor interno si es necesario */
+    display: inline-block;
+    position: relative; /* Para el submenú */
+}
+
+nav > div > a { /* Enlace principal 'Mi CV' */
+    color: white;
+    text-decoration: none;
+    padding: 0.8rem 1.5rem;
+    display: inline-block;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: inline-block; /* Elementos del menú en línea */
+}
+
+nav ul li {
+    display: inline-block; /* Elementos del menú en línea */
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 0.8rem 1.5rem;
+    display: inline-block; /* Asegura padding */
+    transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: #555;
+    border-radius: 4px;
+}
+
+/* Bienvenida */
+#bienvenida {
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: var(--color-primario);
+    padding: 1.5rem;
+    background-color: rgba(230, 240, 255, 0.8); /* Fondo azul muy claro semi-transparente */
+    margin-top: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px var(--color-sombra);
+}
+
+/* Sección Inicio - Diseño de dos columnas Flexbox */
+#inicio .inicio-contenedor {
+    display: flex;
+    flex-wrap: wrap; /* Para responsive */
+    align-items: flex-start; /* Alinear arriba */
+    gap: 2rem; /* Espacio entre texto e imagen */
+}
+
+#inicio .texto {
+    flex: 2; /* Que el texto ocupe más espacio */
+    min-width: 300px; /* Ancho mínimo */
+}
+
+#inicio .imagen {
+    flex: 1; /* Que la imagen ocupe menos espacio */
+    min-width: 200px; /* Ancho mínimo */
+    text-align: center; /* Centrar imagen y figcaption */
+}
+
+/* Foto de Perfil Circular */
+#inicio .imagen img {
+    width: 200px; /* Tamaño ajustado */
+    height: 200px;
+    border-radius: 50%;
+    border: 6px solid var(--color-primario);
+    box-shadow: 0 5px 10px var(--color-sombra);
+    object-fit: cover;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+}
+
+#inicio .imagen img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+    filter: brightness(1.05);
+}
+
+#inicio .imagen figcaption {
+    margin-top: 0.5rem;
+    font-style: italic;
+    color: #666;
+}
+
+/* Estilo Habilidades iniciales (puedes borrar si usas barras) */
+.habilidades span {
+    display: inline-block;
+    background-color: #e0e0e0;
+    color: #555;
+    padding: 5px 10px;
+    border-radius: 15px;
+    margin: 5px 5px 5px 0;
+    font-size: 0.9em;
+}
+
+/* Estilo Títulos de Sección */
+section h2 {
+    color: var(--color-primario);
+    border-bottom: 2px solid var(--color-primario);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+    display: inline-block;
+}
+
+section h3 {
+    color: #555;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Separadores Decorativos (si usas <hr> entre secciones) */
+hr.section-divider {
+    border: none;
+    height: 1px;
+    background-color: var(--color-primario);
+    opacity: 0.4;
+    margin: 3rem 5%;
+}
+
+/* Sección Galería */
+#galeria article {
+    margin-bottom: 1.5rem;
+}
+
+#galeria figure {
+    margin: 1rem 0;
+    text-align: center;
+}
+
+#galeria img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px var(--color-sombra);
+}
+
+#galeria figcaption {
+    font-style: italic;
+    color: #666;
+    margin-top: 0.5rem;
+}
+
+/* Tabla de Intereses */
+#galeria table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+#galeria th, #galeria td {
+    border: 1px solid var(--color-borde);
+    padding: 10px;
+    text-align: left;
+}
+
+#galeria th {
+    background-color: var(--color-secundario);
+    font-weight: bold;
+}
+
+#galeria tbody tr:nth-child(odd) {
+    background-color: #f9f9f9; /* Rayado de cebra sutil */
+}
+
+/* Carrusel (Estilo Básico - requiere JS para funcionar) */
+#carrusel .carrusel {
+    display: flex; /* Simplificación, necesitarás JS para la lógica */
+    overflow: hidden; /* Oculta imágenes que no caben */
+    gap: 1rem;
+}
+
+#carrusel img {
+    max-width: 45%; /* Mostrar aprox. 2 imágenes */
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px var(--color-sombra);
+}
+
+/* Sección Contacto (Formulario) */
+#contacto form {
+    display: grid;
+    gap: 1rem;
+}
+
+#contacto label {
+    font-weight: bold;
+}
+
+#contacto input[type="text"],
+#contacto input[type="email"],
+#contacto textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--color-borde);
+    border-radius: 4px;
+    box-sizing: border-box; /* Incluye padding en el ancho */
+}
+
+#contacto textarea {
+    resize: vertical; /* Permite redimensionar verticalmente */
+}
+
+#contacto button[type="submit"] {
+    background-color: var(--color-primario);
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+    justify-self: start; /* Alinea el botón a la izquierda */
+}
+
+#contacto button[type="submit"]:hover {
+    background-color: #357ABD;
+}
+
+
+/* --- SECCIÓN HABILIDADES CON BARRAS (Para añadir dentro de .texto en #inicio) --- */
+/* (Si decides usar esto, puedes borrar el <p class="habilidades"> original) */
+
+.skills-section { /* Contenedor opcional si añades las barras */
+    margin-top: 1.5rem;
+}
+
+.skill p {
+    margin-bottom: 0.4rem;
+    font-weight: bold;
+    font-size: 0.95em;
+}
+
+.progress-bar-container {
+    background-color: var(--color-progreso-fondo);
+    border-radius: 8px;
+    height: 22px;
+    overflow: hidden;
+    margin-bottom: 1rem;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.progress-bar {
+    background-color: var(--color-progreso);
+    height: 100%;
+    color: white;
+    text-align: center;
+    line-height: 22px;
+    font-size: 0.85em;
+    font-weight: bold;
+    border-radius: 8px 0 0 8px;
+    transition: width 0.5s ease-in-out;
+    /* Width se define inline en el HTML */
+}
+/* --- FIN SECCIÓN HABILIDADES CON BARRAS --- */
+
+
+/* --- SECCIÓN ENLACES SOCIALES (Para añadir donde prefieras, ej. en #inicio o #contacto) --- */
+/* (Requiere añadir Font Awesome y el HTML correspondiente) */
+.social-links {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    /* text-align: center; Si quieres centrar los iconos */
+}
+
+.social-links a {
+    color: var(--color-texto);
+    font-size: 1.8em; /* Tamaño iconos */
+    margin: 0 0.75rem 0 0; /* Espaciado (solo a la derecha) */
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-links a:hover {
+    color: var(--color-primario);
+    transform: scale(1.15);
+}
+/* --- FIN SECCIÓN ENLACES SOCIALES --- */
+
+
+/* Botón para Abrir Modal (Descargar CV) */
+.boton-modal {
+    text-align: center; /* Centra el botón */
+    margin: 2rem 0;
+}
+
+#abrirModal { /* Estilo del botón */
+    background-color: var(--color-primario);
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+#abrirModal:hover {
+    background-color: #357ABD;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Modal (Oculto por defecto - requiere JS para mostrar/ocultar) */
+.modal {
+    display: none; /* Oculto */
+    position: fixed; /* Posición fija */
+    z-index: 100; /* Sobre todo lo demás */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* Scroll si es necesario */
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
+}
+
+.modal-contenido {
+    background-color: #fefefe;
+    margin: 15% auto; /* Centrado vertical y horizontal */
+    padding: 0;
+    border: 1px solid #888;
+    width: 80%; /* Ancho del modal */
+    max-width: 500px; /* Ancho máximo */
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    animation-name: animatetop; /* Animación */
+    animation-duration: 0.4s
+}
+
+/* Animación del modal */
+@keyframes animatetop {
+    from {top: -300px; opacity: 0}
+    to {top: 0; opacity: 1}
+}
+
+.modal-header {
+    padding: 10px 16px;
+    background-color: var(--color-primario);
+    color: white;
+    border-radius: 8px 8px 0 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-header h5 {
+    margin: 0;
+    font-size: 1.2em;
+}
+
+.modal-header button { /* Botón cerrar (X) */
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5em;
+    font-weight: bold;
+    cursor: pointer;
+    opacity: 0.7;
+}
+.modal-header button:hover {
+    opacity: 1;
+}
+
+
+.modal-body {
+    padding: 16px;
+}
+
+.modal-footer {
+    padding: 10px 16px;
+    background-color: #f1f1f1;
+    border-radius: 0 0 8px 8px;
+    text-align: right;
+}
+
+.modal-footer a, .modal-footer button {
+    padding: 8px 15px;
+    margin-left: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.modal-footer a { /* Botón Descargar */
+    background-color: var(--color-primario);
+    color: white;
+    border: none;
+}
+.modal-footer a:hover {
+    background-color: #357ABD;
+}
+
+.modal-footer button { /* Botón Cerrar */
+    background-color: #ccc;
+    color: #333;
+    border: none;
+}
+.modal-footer button:hover {
+    background-color: #bbb;
+}
+
+/* Footer */
+footer {
+    background-color: #e9ecef;
+    color: #495057;
+    text-align: center;
+    padding: 1.5rem 1rem; /* Padding ajustado */
+    margin-top: 3rem;
+    border-top: 1px solid #dee2e6;
+    max-width: none; /* Footer ocupa todo el ancho */
+    border-radius: 0;
+    box-shadow: none;
+}
+
+footer p {
+    margin: 0.5rem 0;
+    font-size: 0.9em;
+}
+
+/* Responsive para pantallas muy pequeñas */
+@media (max-width: 480px) {
+    header h1 { font-size: 2em; }
+    header p { font-size: 1.1em; }
+    nav ul li a { padding: 0.5rem 0.8rem; font-size: 0.9em;}
+    section { padding: 1rem; }
+    #inicio .imagen img { width: 150px; height: 150px; border-width: 4px;}
+}
