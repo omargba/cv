@@ -4,9 +4,15 @@ let indice = 0;
 
 function cambiarImagen() {
   const img = document.getElementById("imagen-carrusel");
-  indice = (indice + 1) % imagenes.length; // ciclo infinito
-  img.src = imagenes[indice];
+  img.style.opacity = 0;
+
+  setTimeout(() => {
+    indice = (indice + 1) % imagenes.length;
+    img.src = imagenes[indice];
+    img.style.opacity = 1;
+  }, 500); // medio segundo de transición
 }
+
 
 // Cambia la imagen cada 3 segundos
 setInterval(cambiarImagen, 3000);

@@ -276,6 +276,20 @@ hr.section-divider {
     box-shadow: 0 2px 5px var(--color-sombra);
 }
 
+.carrusel {
+  text-align: center;
+  margin-top: 20px;
+}
+
+#imagen-carrusel {
+  width: 300px;        /* ajusta según tu gusto */
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: opacity 1s ease-in-out;
+}
+
+
 /* Sección Contacto (Formulario) */
 #contacto form {
     display: grid;
@@ -497,6 +511,41 @@ hr.section-divider {
 }
 .modal-footer button:hover {
     background-color: #bbb;
+}
+
+/* --- SECCIÓN MAPA DE HABILIDADES --- */
+#skillmap {
+  text-align: center;
+  background: linear-gradient(to bottom, #f9f9f9, #ffffff);
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  padding: 2rem;
+}
+
+#skillmap h2 {
+  color: var(--color-primario);
+  margin-bottom: 1rem;
+}
+
+#skillmap img {
+  display: block;
+  margin: 20px auto;
+  border: 3px solid #4a90e2;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  max-width: 80%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#skillmap img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+}
+
+#skillmap p {
+  margin-top: 1rem;
+  font-size: 1.1em;
+  color: #444;
 }
 
 /* Footer */
