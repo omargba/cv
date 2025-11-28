@@ -17,7 +17,9 @@
   <!-- HEADER -->
   <header>
     <h1>Omar Gustavo Borbon Avitia</h1>
+    <button id="colorBtn" class="btn-secundario">Cambiar color del encabezado</button>
     <p>Ingeniería en Sistemas de Información</p>
+    <div id="horaActual"></div>
   </header>
 
   <!-- el menu -->
@@ -34,8 +36,12 @@
 
   <!-- la parte de bienvenida del cv -->
   <div id="bienvenida">
-    ¡Bienvenido a mi CV en línea!
+    ¡Bienvenido a mi CV en línea! <br>
+    <button id="saludoBtn">Haz clic para un mensaje</button>
   </div>
+
+
+
 
   <!-- Sección inicio -->
   <section id="inicio">
@@ -161,27 +167,32 @@
     </div>
   </section>
 
-  <!-- Botón para abrir modal -->
-  <div class="boton-modal">
-    <button id="abrirModal">Descargar CV en PDF</button>
-  </div>
 
-  <!-- Modal -->
-  <div id="cvModal" class="modal">
-    <div class="modal-contenido">
-      <div class="modal-header">
-        <h5>Descargar mi CV</h5>
-        <button id="cerrarModal" aria-label="Cerrar">X</button>
-      </div>
-      <div class="modal-body">
-        ¿Quieres descargar una copia en PDF de mi currículum?
-      </div>
-      <div class="modal-footer">
-        <a href="cv.pdf" download>Descargar</a>
-        <button id="cerrarModal2">Cerrar</button>
-      </div>
+
+<!-- Botón para abrir modal -->
+<div class="boton-modal">
+  <button id="abrirModal">Descargar CV en PDF</button>
+  <p id="contadorDescargas">Has presionado el botón 0 veces.</p>
+</div>
+
+<!-- Modal -->
+<div id="cvModal" class="modal">
+  <div class="modal-contenido">
+    <div class="modal-header">
+      <h5>Descargar mi CV</h5>
+      <button id="cerrarModal" aria-label="Cerrar">X</button>
+    </div>
+
+    <div class="modal-body">
+      ¿Quieres descargar una copia en PDF de mi currículum?
+    </div>
+
+    <div class="modal-footer">
+      <a href="cv.pdf" download>Descargar</a>
+      <button id="cerrarModal2">Cerrar</button>
     </div>
   </div>
+</div>
 
 
 

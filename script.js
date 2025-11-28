@@ -1,3 +1,66 @@
+
+// Boton de alerta implementado 
+window.onload = function() {
+  alert("¡Bienvenido a mi CV!");
+};
+
+document.getElementById("saludoBtn").addEventListener("click", function() {
+  alert("¡Gracias por visitar mi CV!");
+});
+
+// --- Cambio de color del fondo del encabezado ---
+const header = document.querySelector("header");
+const colorBtn = document.getElementById("colorBtn");
+
+// Paleta de colores 
+const coloresFondo = [
+  "linear-gradient(to bottom, #ADD8E6, #FFFFFF)", // gradiente original
+  "#fde68a", // amarillo suave
+  "#dcfce7", // verde claro
+  "#fee2e2", // rosa claro
+  "#e9d5ff", // lila
+  "#fef3c7"  // crema
+];
+
+let indiceFondo = 0;
+
+colorBtn.addEventListener("click", () => {
+  indiceFondo = (indiceFondo + 1) % coloresFondo.length;
+  header.style.background = coloresFondo[indiceFondo];
+});
+
+
+
+
+
+// Funcion para hora en tiempo real
+function actualizarHora() {
+  const ahora = new Date();
+  const hora = ahora.toLocaleTimeString();
+  document.getElementById("horaActual").textContent = "Hora actual: " + hora;
+}
+
+setInterval(actualizarHora, 1000);
+actualizarHora(); // para mostrarla al cargar
+
+
+// --- Contador de clics en el botón Descargar CV ---
+let contadorDescargas = 0;
+
+const botonDescargar = document.getElementById("abrirModal");
+botonDescargar.addEventListener("click", function() {
+  contadorDescargas++;
+  console.log(`El botón se ha presionado ${contadorDescargas} veces`);
+  
+  // Mostramos visualmente debajo del botón
+  const textoContador = document.getElementById("contadorDescargas");
+  textoContador.textContent = `Has presionado el botón ${contadorDescargas} ${contadorDescargas === 1 ? "vez" : "veces"}.`;
+});
+
+
+
+
+
 //  Carrusel de imágenes 
 const imagenes = ["imagenes/fondos.jpeg", "imagenes/foto cv.png", "imagenes/ia.jpeg", "imagenes/programacion.jpeg"]; // cambia con tus rutas
 let indice = 0;

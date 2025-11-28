@@ -1,6 +1,21 @@
-/* Variables de color (ajusta estos a tu gusto) */
+.btn-secundario {
+  margin-top: 8px;
+  padding: 8px 14px;
+  border: 0;
+  border-radius: 8px;
+  background: #0078d7;
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+}
+.btn-secundario:hover {
+  background: #005fa3;
+}
+
+
+/* Variables de color*/
 :root {
-    --color-primario: #4a90e2; /* Azul ejemplo */
+    --color-primario: #4a90e2; /* Azul*/
     --color-secundario: #f4f4f4; /* Gris claro */
     --color-texto: #333;
     --color-fondo: #ffffff;
@@ -34,8 +49,24 @@ body::before {
     background-color: rgba(255, 255, 255, 0.9); /* Blanco 90% opaco */
     z-index: -1;
 }
+/*Poner hora actual alineada ala izquierda*/
+#horaActual {
+  text-align: right;
+  padding-right: 20px; 
+}
 
-/* Asegurar contenido sobre overlay y añadir algo de estructura */
+#contadorDescargas {
+  font-size: 14px;
+  color: #333;
+  margin-top: 8px;
+  font-weight: bold;
+}
+
+
+
+
+
+/*contenido sobre overlay y añadir algo de estructura */
 header, nav, section, footer, #bienvenida {
     position: relative;
     z-index: 1;
@@ -55,19 +86,24 @@ section {
     padding: 2rem;
 }
 
-/* Encabezado con Gradiente */
 header {
-    background: linear-gradient(to bottom, var(--gradient-start), var(--gradient-end));
-    padding-top: 2.5rem;
-    padding-bottom: 2.5rem;
-    text-align: center;
-    color: var(--color-texto);
-    border-bottom: 1px solid var(--color-borde);
-    max-width: none; /* Header ocupa todo el ancho */
-    margin-bottom: 0; /* Sin margen inferior para pegar nav */
-    border-radius: 0; /* Sin bordes redondeados */
-    box-shadow: none; /* Sin sombra */
+  text-align: center;
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+  color: var(--color-texto);
+  border-bottom: 1px solid var(--color-borde);
+  max-width: none;
+  margin-bottom: 0;
+  border-radius: 0;
+  box-shadow: none;
+
+  /* Fondo inicial con gradiente */
+  background: linear-gradient(to bottom, var(--gradient-start), var(--gradient-end));
+
+  /* Transiciones suaves entre colores o gradientes */
+  transition: background 0.8s ease, background-color 0.8s ease;
 }
+
 
 header h1 {
     margin: 0;
@@ -547,6 +583,8 @@ hr.section-divider {
   font-size: 1.1em;
   color: #444;
 }
+
+
 
 /* Footer */
 footer {
